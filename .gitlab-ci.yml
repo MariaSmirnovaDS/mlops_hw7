@@ -1,0 +1,10 @@
+stages:
+  - test
+
+run-pipeline:
+  stage: test
+  script:
+    - pip install scikit-learn numpy pandas
+    - python ml_pipeline.py
+  only:
+    - main
