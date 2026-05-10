@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ml-service-blue:
+    image: ml-service:v1.0.0
+    ports:
+      - "5001:5000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
